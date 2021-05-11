@@ -31,10 +31,11 @@ public class DemoTest {
 	public void init() {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-//		options.setHeadless(true); // Turns off the chrome window! ( tests are finished )
+		options.setHeadless(true); // Turns off the chrome window! ( tests are finished )
 		driver = new ChromeDriver(options);
 		//set window size
 		driver.manage().window().setSize(new Dimension(1360, 789));
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
 	}
 	
 	
@@ -84,6 +85,10 @@ public class DemoTest {
 		
 		// Login
 		loginPage.loginInfo(username, password);
+		
+		// Explicit = when we depend on a element 
+		WebDriverWait wait = new WebDriverWait(driver, 7);
+		wait.until(ExpectedConditions.textToBePresentInElement(loginPage.getMessage(), "ohno"));
 		
 		assertTrue(driver.getPageSource().contains("**Successful Login**"));
 		
