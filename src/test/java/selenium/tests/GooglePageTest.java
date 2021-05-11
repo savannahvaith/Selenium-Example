@@ -52,6 +52,4 @@ public class GooglePageTest {
 		assertTrue(page.getFoundedDate().getText().contains("16 October"));
 	}
 	
-	
-
 }
