@@ -13,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import selenium.pages.QACommunityPage;
 
-public class QACommunityPageTest {
+public class QACommunityPageTest{
 	
 	private WebDriver driver;
 	
