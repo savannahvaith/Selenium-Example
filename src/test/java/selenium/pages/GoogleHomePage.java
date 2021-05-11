@@ -28,7 +28,7 @@ public class GoogleHomePage {
 		return searchButton;
 	}
 
-	public static String getUrl() {
+	public static String getUrl() {	
 		return URL;
 	}
 
@@ -39,8 +39,5 @@ public class GoogleHomePage {
 	public WebElement getAgreeButton() {
 		return agreeButton;
 	}
-	
-	
-	
 	
 }
